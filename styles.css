@@ -90,7 +90,9 @@ h1 {
 .cards .card {
     display: flex;
     align-items: center;
-    justify-content: center;
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
     flex-direction: column;
     text-align: center;
     height: 125px;
@@ -121,7 +123,16 @@ h1 {
 }
 
 .cards .card:hover {
-    filter: brightness(85%);
+    filter: brightness(95%);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+    transition: transform 0.4s ease;
+    transform: scale(0.97);
+}
+
+.cards .card h3 {
+    text-decoration: underline;
+    position: relative;
+    margin: 0;
 }
 
 #signup {
