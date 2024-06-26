@@ -46,6 +46,7 @@ function addSet(button) {
 function exportData() {
     const cards = document.querySelectorAll('.card');
     let data = 'Lift Log Data:\n\n';
+    let hasEmptyFields = false;
 
     cards.forEach((card) => {
         data += `${card.querySelector('h3').textContent}:\n`;
@@ -55,14 +56,18 @@ function exportData() {
             const reps = set.querySelector('input[name="reps"]').value;
 
             if (weight === '' || reps === '') {
-                alert('All sets must have both weight and reps filled out to export.');
-                return;
+                hasEmptyFields = true;
+            } else {
+                data += `  Set ${setIndex + 1}: Weight = ${weight}, Reps = ${reps}\n`;
             }
-
-            data += `  Set ${setIndex + 1}: Weight = ${weight}, Reps = ${reps}\n`;
         });
         data += '\n';
     });
+
+    if (hasEmptyFields) {
+        alert('All sets must have both weight and reps filled out to export.');
+        return;
+    }
 
     const blob = new Blob([data], { type: 'text/plain' });
     const url = URL.createObjectURL(blob);
