@@ -1,4 +1,4 @@
-# Lift Log
+# [Lift Log](https://www.vegasmantsch.com/liftlog/log/) - LIVE DEMO
 
 Lift Log is a simple web application designed to help users track their weightlifting exercises and sets. Users can select exercises, add sets with weight and reps, and export their workout data to a text file.
 
